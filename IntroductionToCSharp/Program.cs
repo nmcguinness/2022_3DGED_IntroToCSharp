@@ -51,7 +51,29 @@ namespace IntroductionToCSharp
         {
             //Demo.Class.Player p
             //  = new Demo.Class.Player("jane smith", 100);
-            Player p = new Player("jane smith", 100);
+            Player p1 = new Player("jane smith", 100);
+            Console.WriteLine(p1);
+
+            //test the Equals for different 
+            Player p2 = new Player("bob jones", 100);
+            bool areEquals = p1.Equals(p2);
+            Console.WriteLine($"p1 and p2 are equals? {areEquals}");
+
+            //test the Equals for same 
+            Player p3 = new Player("jane smith", 100);
+            areEquals = p1.Equals(p3);
+            Console.WriteLine($"p1 and p3 are equals? {areEquals}");
+
+            //test the Equals for null 
+            Player p4 = null;
+            areEquals = p3.Equals(p4);
+            Console.WriteLine($"p3 and null are equals? {areEquals}");
+
+            //test the Equals for same object twice 
+            Player p5 = p1;
+            areEquals = p1.Equals(p5);
+            Console.WriteLine($"p1 and p5 are equals? {areEquals}");
+
         }
     }
 }

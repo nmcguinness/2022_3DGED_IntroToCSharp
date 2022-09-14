@@ -27,10 +27,22 @@
 
         public override string ToString()
         {
-          //  string s = name + "," + health;
-         //   return s;
+            //  string s = name + "," + health;
+            //   return s;
 
-            return $"{name},{health}";  //string initialization
+            //string initialization
+            return $"n:{name},h:{health}";  
+        }
+
+        public bool Equals(Player other)
+        {
+            if (other == null)
+                return false;
+
+            if (name.Equals(other.name) && health == other.health)
+                return true;
+
+            return false;
         }
 
 
