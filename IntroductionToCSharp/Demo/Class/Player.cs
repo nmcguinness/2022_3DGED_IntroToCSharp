@@ -36,6 +36,9 @@
 
         public bool Equals(Player other)
         {
+            if (this == other)
+                return true;
+
             if (other == null)
                 return false;
 
@@ -45,6 +48,9 @@
             return false;
         }
 
-
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(name, health);
+        }
     }
 }
