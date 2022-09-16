@@ -56,6 +56,17 @@ namespace IntroductionToCSharp
             Vector3 rotation = new Vector3(0, 45, 0);
             Vector3 scale = new Vector3(1,1,1);
 
+            Transform p1Transform = new Transform(position, rotation, scale);
+
+            Transform p2Transform = new Transform(new Vector3(5,10,5));
+
+            bool areEquals = p1Transform.Equals(p2Transform);
+            Console.WriteLine($"areEquals? {areEquals}");
+
+            //can we speed up the process of making vector3 objects like (1,1,1) or (0,1,0)?
+
+
+
         }
 
         private void DemoAnotherClass()

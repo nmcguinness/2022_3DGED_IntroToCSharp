@@ -26,12 +26,26 @@
             Scale = scale;
         }
 
+        //ToString, Equals, GetHashCode
+        public override string ToString()
+        {
+            //we could create the string output as below, or use $"" string initialization on line 35
+          //  string strOut = position.ToString() + "," + rotation.ToString() + ", " + scale.ToString();
 
+            return $"p:{position}\nr:{rotation}\ns:{scale}";
+        }
 
+        public override bool Equals(object? obj)
+        {
+            return obj is Transform transform &&
+                position.Equals(transform.position) &&
+                rotation.Equals(transform.rotation) &&
+                scale.Equals(transform.scale);
+        }
 
-
-
-
-        //Equals, GetHashCode
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(position, rotation, scale);
+        }
     }
 }
