@@ -10,6 +10,7 @@
 - [x] Added static readonly constants (e.g. Vector3.Zero)
 - [x] Added intellisense regions to organise our code
 - [x] Added demo for deep/shallow copy using Clone
+- [x] Used 'as' keyword to perform a typecast
 - [ ] Added demo using list to store strings, Vector3 objects
 - [ ] Operator overloading
 - [ ] Inheritance
