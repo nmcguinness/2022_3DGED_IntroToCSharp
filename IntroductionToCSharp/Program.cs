@@ -44,6 +44,18 @@ namespace IntroductionToCSharp
 
             Console.WriteLine("**** DemoAnotherClass ****");
             app.DemoAnotherClass();
+
+            Console.WriteLine("**** DemoPlayer ****");
+            app.DemoPlayer();
+        }
+
+        //TODO - DemoComposition
+        private void DemoPlayer()
+        {
+            Vector3 position = new Vector3(-10, 100, 50);
+            Vector3 rotation = new Vector3(0, 45, 0);
+            Vector3 scale = new Vector3(1,1,1);
+
         }
 
         private void DemoAnotherClass()
