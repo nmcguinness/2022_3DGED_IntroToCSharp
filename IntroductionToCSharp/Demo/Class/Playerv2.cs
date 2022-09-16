@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IntroductionToCSharp.Demo.Class
+﻿namespace IntroductionToCSharp.Demo.Class
 {
     public class Playerv2
     {
@@ -31,12 +25,39 @@ namespace IntroductionToCSharp.Demo.Class
         {
             get { return surfaceColor; }
             set { surfaceColor = value; }
-        } 
+        }
         #endregion
 
+        public Playerv2(string name, Transform transform)
+            //we will pass white (i.e. (1,1,1) for surfaceColor)
+            : this(name, Vector3.One, transform)
+        {
 
+        }
+        public Playerv2(string name, Vector3 surfaceColor, Transform transform)
+        {
+            //since we now have added validation on name we should call property i.e. Name
+            Name = name;
+            SurfaceColor = surfaceColor;
+            Transform = transform;
+        }
 
+        public override string? ToString()
+        {
+            return $"{name}\n{surfaceColor}\n{transform}";
+        }
 
+        public override bool Equals(object? obj)
+        {
+            return obj is Playerv2 playerv &&
+                   name == playerv.name &&
+                   transform.Equals(playerv.transform) &&
+                   surfaceColor.Equals(playerv.surfaceColor);
+        }
 
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(name, transform, surfaceColor);
+        }
     }
 }
