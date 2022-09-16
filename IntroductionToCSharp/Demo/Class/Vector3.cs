@@ -11,7 +11,6 @@ namespace IntroductionToCSharp.Demo.Class
         public static readonly Vector3 UnitY = new Vector3(0, 1, 0); 
         #endregion
 
-
         #region Variables
         private float x;
         private float y;
@@ -82,6 +81,21 @@ namespace IntroductionToCSharp.Demo.Class
             return HashCode.Combine(x, y, z);
         } 
         #endregion
+
+        //clone - shallow example
+        public object GetShallowCopy()
+        {
+            return this;
+        }
+
+
+        //clone - deep example
+        public object Clone()
+        {
+            //the new keyword tells me that I am returning the address (in RAM)
+            //of a new and DISTINCT object i.e. a deep copy
+            return new Vector3(x, y, z);
+        }
 
     }
 }

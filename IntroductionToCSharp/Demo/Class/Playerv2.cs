@@ -50,7 +50,7 @@
         public override bool Equals(object? obj)
         {
             return obj is Playerv2 playerv &&
-                   name == playerv.name &&
+                   name.Equals(playerv.name) &&
                    transform.Equals(playerv.transform) &&
                    surfaceColor.Equals(playerv.surfaceColor);
         }

@@ -1,6 +1,7 @@
 ﻿
 //used by Player since its in a different namespace than where its called i.e. Program
 using IntroductionToCSharp.Demo.Class;
+using System.Net.Http.Headers;
 
 #region Demo - Namespace
 //namespaces are useful to bundle together thematically similar classes and variables
@@ -47,6 +48,46 @@ namespace IntroductionToCSharp
 
             Console.WriteLine("**** DemoPlayer ****");
             app.DemoPlayer();
+
+            Console.WriteLine("**** DemoShallowDeepCopy ****");
+            app.DemoShallowDeepCopy();
+        }
+
+        private void DemoShallowDeepCopy()
+        {
+            Console.WriteLine("shallow demo....");
+            //shallow demo
+            Vector3 v1 = new Vector3(1, 2, 3);
+            Vector3 v2 = v1.GetShallowCopy() as Vector3;
+            Console.WriteLine($"v1: {v1}");
+            Console.WriteLine($"v2: {v2}");
+
+            //since v2 points to v1 i.e. same object in RAM
+            //changing v2 will change v1 e.g.
+            v2.X = -1000;
+            Console.WriteLine($"v1: {v1}");
+            Console.WriteLine($"v2: {v2}");
+
+            Console.WriteLine("deep demo....");
+            //deep demo
+            Vector3 v3 = new Vector3(10, 20, 30);
+
+            //typecast using 'as' is more desirable because it returns a null instead of crashing at runtime
+          //  Vector3 v4 = (Vector3)v3.Clone();
+            Vector3 v4 = v3.Clone() as Vector3;
+
+
+            Console.WriteLine($"v3: {v3}");
+            Console.WriteLine($"v4: {v4}");
+
+            //since v3 and v4 point to DISTINCT objects
+            //changing v4 will NOT change v3 e.g.
+            v4.Z = 9999;
+            Console.WriteLine($"v3: {v3}");
+            Console.WriteLine($"v4: {v4}");
+            //Player - transform, mesh, material, controller
+
+
         }
 
         //TODO - DemoComposition

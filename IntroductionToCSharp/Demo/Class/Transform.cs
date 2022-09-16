@@ -20,7 +20,8 @@
         {
 
         }
-        public Transform(Vector3 position, Vector3 rotation, Vector3 scale)
+        public Transform(Vector3? position, 
+            Vector3? rotation, Vector3? scale)
         {
             Position = position;
             Rotation = rotation;
@@ -48,5 +49,20 @@
         {
             return HashCode.Combine(position, rotation, scale);
         }
+
+        public object GetShallowCopy()
+        {
+            return this;
+        }
+
+        public object Clone()
+        {
+            Transform clone = new Transform(
+                position.Clone() as Vector3,
+                rotation.Clone() as Vector3, 
+                scale.Clone() as Vector3);
+            return clone;
+        }
+
     }
 }
