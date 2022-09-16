@@ -15,7 +15,8 @@
 
         //constructors
         public Transform(Vector3 position)
-            : this(position, new Vector3(0,0,0), new Vector3(1,1,1))
+            : this(position, Vector3.Zero, Vector3.One) //let's use the new constants
+        // : this(position, new Vector3(0,0,0), new Vector3(1,1,1))
         {
 
         }

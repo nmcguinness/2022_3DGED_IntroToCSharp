@@ -64,7 +64,13 @@ namespace IntroductionToCSharp
             Console.WriteLine($"areEquals? {areEquals}");
 
             //can we speed up the process of making vector3 objects like (1,1,1) or (0,1,0)?
+            Vector3 up = Vector3.UnitY;
 
+            //we can use the new constants to more rapidly create a transform
+            Transform p3Transform = new Transform(Vector3.Zero, Vector3.Zero, Vector3.One);
+            
+            //lets see what our new transform object looks like as a string
+            Console.WriteLine(p3Transform.ToString());
 
 
         }
