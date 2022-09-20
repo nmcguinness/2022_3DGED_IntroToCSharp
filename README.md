@@ -12,7 +12,7 @@
 - [x] Added demo for deep/shallow copy using Clone
 - [x] Used 'as' keyword to perform a typecast
 - [ ] Added demo using list to store strings, Vector3 objects
-- [ ] Operator overloading
+- [x] Operator overloading
 - [ ] Inheritance
 - [ ] Keywords: virtual, override
 - [ ] Keywords: var, ref, out
