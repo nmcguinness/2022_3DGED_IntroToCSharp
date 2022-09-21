@@ -1,4 +1,6 @@
-﻿namespace GD.Demo
+﻿using IntroductionToCSharp.Demo;
+
+namespace GD.Demo
 {
     /// <summary>
     /// Simple representation of a Player to demonstrate constructors, this, ToString, Equals, GetHashCode
@@ -6,6 +8,9 @@
     public class Player
     {
         #region Variables
+
+        //public string type; //"thief", "mage"
+        public PlayerType playerType;
 
         public string name;
         public int health;
@@ -20,14 +25,22 @@
         ////    this.health = 0;
         ////}
 
-        public Player() : this("", 0)
+        public Player()
+            : this("", 0, PlayerType.Hunter)
         {
         }
 
+        //add this constructor for backward compatability (i.e. before we added PlayerType)
         public Player(string name, int health)
+            : this(name, health, PlayerType.Hunter)
+        {
+        }
+
+        public Player(string name, int health, PlayerType playerType)
         {
             this.name = name;
             this.health = health;
+            this.playerType = playerType;
         }
 
         #endregion Constructors
@@ -40,7 +53,7 @@
             //   return s;
 
             //string initialization
-            return $"n:{name},h:{health}";
+            return $"n:{name},h:{health},t:{playerType}";
         }
 
         public bool Equals(Player other)

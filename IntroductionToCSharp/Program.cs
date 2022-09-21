@@ -1,7 +1,8 @@
-﻿#region Demo - Namespaces
-
-//namespaces are useful to bundle together thematically similar classes and variables
+﻿//namespaces are useful to bundle together thematically similar classes and variables
 using GD.Demo;
+using IntroductionToCSharp.Demo;
+
+#region Demo - Namespaces
 
 namespace GDMath
 {
@@ -62,8 +63,26 @@ namespace GD
             //Console.WriteLine("**** DemoListPrint ****");
             //app.DemoListPrint();
 
-            Console.WriteLine("**** DemoListFind ****");
-            app.DemoListFind();
+            //Console.WriteLine("**** DemoListFind ****");
+            //app.DemoListFind();
+
+            //Console.WriteLine("**** DemoListFindPlayer ****");
+            //app.DemoListFindPlayer();
+
+            //Console.WriteLine("**** DemoListSortPlayer ****");
+            //app.DemoListSortPlayer();
+
+            //Console.WriteLine("**** DemoListSortPlayerType ****");
+            //app.DemoListSortPlayerType();
+
+            //Console.WriteLine("**** DemoFunc ****");
+            //app.DemoFunc();
+
+            //Console.WriteLine("**** DemoFuncAsParameter ****");
+            //app.DemoFuncAsParameter();
+
+            Console.WriteLine("**** DemoAction ****");
+            app.DemoAction();
         }
 
         #region Demo - Namespaces
@@ -239,6 +258,107 @@ namespace GD
 
         #region Demo - List
 
+        private void DemoListSortPlayerType()
+        {
+            List<Player> players = new List<Player>
+            {
+                new Player("max", 99, PlayerType.Assassin),
+                 new Player("pax", 25, PlayerType.Thief),
+                  new Player("frank", 80, PlayerType.Hunter),
+            };
+
+            int direction = 1; //1 = Asc, -1 = Desc
+            players.Sort((a, b) => direction * (a.playerType - b.playerType));
+            players.ForEach((player) => Console.WriteLine(player));
+        }
+
+        private int SortByHealthAsc(Player a, Player b)
+        {
+            if (a.health == b.health)
+                return 0;
+            else if (a.health < b.health)
+                return -1;
+            else
+                return 1;
+        }
+
+        private void DemoListSortPlayer()
+        {
+            List<Player> players = new List<Player>
+            {
+                new Player("Andy", 80),
+                 new Player("bea", 100),
+                  new Player("ciaran", 50),
+                   new Player("daphne", 75),
+            };
+            players.Sort(SortByHealthAsc);
+            players.ForEach((player) => Console.WriteLine(player));
+
+            Console.WriteLine();
+            int direction = -1;  //1 = Asc, -1 = Desc
+            players.Sort((a, b) => direction * (a.health - b.health));
+            players.ForEach((player) => Console.WriteLine(player));
+        }
+
+        //predicate used in a Find, FindAll, Remove, RemoveAll
+        private bool HealthGreaterEqual(Player p)
+        {
+            return p.health >= 80 && p.health <= 90;
+        }
+
+        private void DemoListFindPlayer()
+        {
+            List<Player> players = new List<Player>
+            {
+                new Player("Andy", 80),
+                 new Player("bea", 100),
+                  new Player("ciaran", 50),
+                   new Player("daphne", 75),
+            };
+
+            //find all players with health >=80
+            List<Player> results = players.FindAll(HealthGreaterEqual);
+            results.ForEach((player) => Console.WriteLine(player));
+
+            //remove last results to re-use this list - why not!?
+            results.Clear();
+            Console.WriteLine();
+
+            //lets do same thing but with control over thresholds
+            int lowerThreshold = 80;
+            int upperThreshold = 90;
+            results = players.FindAll(
+                (player) =>
+                player.health >= lowerThreshold &&
+                player.health <= upperThreshold
+            );
+            results.ForEach((player) => Console.WriteLine(player));
+
+            //remove last results to re-use this list - why not!?
+            results.Clear();
+            Console.WriteLine();
+
+            //find all players with name containing "a"
+            string targetString = "an";
+            results = players.FindAll(
+                (p) =>
+                p.name.ToLower().Contains(targetString)
+                );
+            results.ForEach((p) => Console.WriteLine($"Player: {p}"));
+
+            //lets use another List method that uses a Predicate
+            int findIndex = players.FindIndex(0, (p) => p.health == 50);
+            Console.WriteLine($"Found player with health == 50 at {findIndex}");
+
+            //remove last results to re-use this list - why not!?
+            results.Clear();
+            Console.WriteLine();
+
+            //lets use another List method that uses a Predicate
+            int removeCount = players.RemoveAll((p) => p.health != 100);
+            players.ForEach((player) => Console.WriteLine(player));
+        }
+
         public bool isAdult(int age)
         {
             return age >= 18;
@@ -250,17 +370,17 @@ namespace GD
             {
                 16, 18, 21, 19, 24, 32
             };
-            ages.ForEach((y) => Console.WriteLine(y));
+            ages.ForEach((age) => Console.WriteLine(age));
 
             Console.WriteLine();
 
             List<int> adultAges = ages.FindAll(isAdult);
-            adultAges.ForEach((y) => Console.WriteLine(y));
+            adultAges.ForEach((age) => Console.WriteLine(age));
 
             Console.WriteLine();
 
             List<int> evenAges = ages.FindAll((age) => age % 2 == 0);
-            evenAges.ForEach((y) => Console.WriteLine(y));
+            evenAges.ForEach((age) => Console.WriteLine(age));
         }
 
         public void print(int x)
@@ -309,5 +429,63 @@ namespace GD
         }
 
         #endregion Demo - List
+
+        #region Func Action Predicate
+
+        public int add(int x, int y)
+        {
+            return x + y;
+        }
+
+        public int divide(int x, int y)
+        {
+            if (y == 0) throw new DivideByZeroException("y cannot be zero!");
+            return x / y;
+        }
+
+        private void DemoFunc()
+        {
+            //use Func to store the address of another function/method
+            Func<int, int, int> theFunc = add;
+
+            //call the function we point to using the variable name theFunc
+            int result = theFunc(3, 4);
+            Console.WriteLine(result);
+
+            //we can make theFunc point to a different function
+            theFunc = divide;
+            result = theFunc(3, 4);
+            Console.WriteLine(result);
+        }
+
+        private List<int> Transform(List<int> list, Func<int, int> func)
+        {
+            List<int> results = new List<int>();
+            foreach (int x in list)
+                results.Add(func(x));
+            return results;
+        }
+
+        private void DemoFuncAsParameter()
+        {
+            List<int> numbers = new List<int> { 10, 17, 32, 56, 77 };
+            Func<int, int> myFunc = (number) => number * number;
+            List<int> results = Transform(numbers, myFunc);
+            results.ForEach((number) => Console.WriteLine(number));
+        }
+
+        private void PlaySound(int freq, int durationMs)
+        {
+            Console.Beep(freq, durationMs);
+        }
+
+        private void DemoAction()
+        {
+            Action<int, int> myThing = PlaySound;
+            //yes, I know the 1000 isnt used but stop focusing on this!
+            myThing(5000, 2000);
+        }
+
+        #endregion Func Action Predicate
     }
 }

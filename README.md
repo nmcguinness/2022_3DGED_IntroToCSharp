@@ -32,6 +32,8 @@ This repository contains code samples used to learn the basics of C# in preparat
 ### To Do - Week 2
 - [x] Operator overloading
 - [x] Added demo using list to store strings, Vector3 objects
+- [ ] Action, Func, Predicate
+- [ ] event and Delegate
 - [ ] Inheritance
 - [ ] Keywords: virtual, override
 - [ ] Keywords: var, ref, out
