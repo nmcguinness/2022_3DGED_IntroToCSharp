@@ -15,6 +15,8 @@ This repository contains code samples used to learn the basics of C# in preparat
 | Operator overloading | Demo - adding useful arithmetic (e.g. +, *) and logical (e.g. ==) operators | Vector3  | [Operator Overloading](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/operator-overloading) |
 | Data Structures | Demo - using a List<T> | Program  | [C# List Tutorial](https://www.c-sharpcorner.com/article/c-sharp-list/) |
 | Lambda Expressions | Demo - using a Lambda Expression to find in a List<T> | Program  | [Lambda Expressions](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-expressions) |
+| enum | Demo - using an enum to represent a fixed set of player types, sorting by enum | Program, Player, PlayerType  | [C# | Enumeration (or enum)](https://www.geeksforgeeks.org/c-sharp-enumeration-or-enum/) |
+| Func & Action | Demo - how to store a lambda expression in a Func/Action, how to pass a Func/Action as a parameter | Program  | [Func](https://www.tutorialsteacher.com/csharp/csharp-func-delegate), [Action](https://www.tutorialsteacher.com/csharp/csharp-action-delegate) |
 
 
 ### To Do - Week 1
@@ -32,7 +34,9 @@ This repository contains code samples used to learn the basics of C# in preparat
 ### To Do - Week 2
 - [x] Operator overloading
 - [x] Added demo using list to store strings, Vector3 objects
-- [ ] Action, Func, Predicate
+- [x] Added FindAll, RemoveAll, Sort demos using Lambda expressions
+- [x] Predicate, Func, Action
+- [x] Added enum demo to show how to set enum symbol order (e.g Mage = 1) and how to sort by enum
 - [ ] event and Delegate
 - [ ] Inheritance
 - [ ] Keywords: virtual, override
