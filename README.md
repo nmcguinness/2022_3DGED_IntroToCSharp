@@ -4,7 +4,7 @@
 This repository contains code samples used to learn the basics of C# in preparation for the development of the MonoGame-based 3D game engine.
 
 ## Table of Contents ##
-| Topic | Description | See | Additional Reading |
+| Topic | Description | See (Source Code) | Additional Reading |
 | ---------------- | --------------- | --------------- | --------------- | 
 | Namespace definition | Demo - defining namespaces  | Program | [Namespace](https://www.tutorialspoint.com/csharp/csharp_namespaces.htm) |
 | Class definition | Demo - class, constructor, variables, ToString, GetHashCode | Player, Playerv2  | [Class & Object](https://www.geeksforgeeks.org/c-sharp-class-and-object/) |
