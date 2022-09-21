@@ -1,7 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace IntroductionToCSharp.Demo.Class
+﻿namespace GD.Demo
 {
+    /// <summary>
+    /// Stores the x,y,z values for any three dimensional variable (e.g. rotation, color (rgb))
+    /// </summary>
     public class Vector3 //: Object
     {
         #region Constants
@@ -17,15 +18,15 @@ namespace IntroductionToCSharp.Demo.Class
 
         #region Variables
 
-        private float x;
-        private float y;
-        private float z;
+        private double x;
+        private double y;
+        private double z;
 
         #endregion Variables
 
         #region Properties
 
-        public float X
+        public double X
         {
             get
             {
@@ -37,10 +38,10 @@ namespace IntroductionToCSharp.Demo.Class
             }
         }
 
-        public float Y
+        public double Y
         { get { return y; } set { y = value; } }
 
-        public float Z
+        public double Z
         { get { return z; } set { z = value; } }
 
         #endregion Properties
@@ -54,7 +55,7 @@ namespace IntroductionToCSharp.Demo.Class
             //Z = 0;
         }
 
-        public Vector3(float x, float y, float z)
+        public Vector3(double x, double y, double z)
         {
             X = x;
             Y = y;
@@ -170,7 +171,7 @@ namespace IntroductionToCSharp.Demo.Class
         /// <param name="multiplier">Scalar floating point</param>
         /// <param name="rhs">Vector3</param>
         /// <returns>Vector3</returns>
-        public static Vector3 operator *(float multiplier, Vector3 rhs)
+        public static Vector3 operator *(double multiplier, Vector3 rhs)
         {
             return new Vector3(multiplier * rhs.X,
                 multiplier * rhs.Y,
@@ -184,7 +185,7 @@ namespace IntroductionToCSharp.Demo.Class
         /// <param name="multiplier">Scalar floating point</param>
         /// <param name="rhs">Vector3</param>
         /// <returns>Vector3</returns>
-        public static Vector3 operator *(Vector3 rhs, float multiplier)
+        public static Vector3 operator *(Vector3 rhs, double multiplier)
         {
             return multiplier * rhs;
         }

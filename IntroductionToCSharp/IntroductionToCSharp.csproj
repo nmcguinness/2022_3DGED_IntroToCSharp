@@ -8,11 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Demo\Inheritance\" />
-    <Folder Include="Demo\Composition\" />
-    <Folder Include="Demo\Data Structures\" />
-    <Folder Include="Demo\Generics\" />
-    <Folder Include="Demo\Lambdas\" />
+    <Compile Remove="Demo\Composition\**" />
+    <Compile Remove="Demo\Generics\**" />
+    <Compile Remove="Demo\Inheritance\**" />
+    <Compile Remove="Demo\Lambdas\**" />
+    <EmbeddedResource Remove="Demo\Composition\**" />
+    <EmbeddedResource Remove="Demo\Generics\**" />
+    <EmbeddedResource Remove="Demo\Inheritance\**" />
+    <EmbeddedResource Remove="Demo\Lambdas\**" />
+    <None Remove="Demo\Composition\**" />
+    <None Remove="Demo\Generics\**" />
+    <None Remove="Demo\Inheritance\**" />
+    <None Remove="Demo\Lambdas\**" />
   </ItemGroup>
 
 </Project>

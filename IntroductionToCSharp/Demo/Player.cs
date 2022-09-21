@@ -1,12 +1,18 @@
-﻿namespace IntroductionToCSharp.Demo.Class
+﻿namespace GD.Demo
 {
     /// <summary>
-    /// Demo showing class constructors, this, ToString, Equals, GetHashCode, Clone
+    /// Simple representation of a Player to demonstrate constructors, this, ToString, Equals, GetHashCode
     /// </summary>
     public class Player
     {
+        #region Variables
+
         public string name;
         public int health;
+
+        #endregion Variables
+
+        #region Constructors
 
         ////public Player()
         ////{
@@ -16,7 +22,6 @@
 
         public Player() : this("", 0)
         {
-
         }
 
         public Player(string name, int health)
@@ -25,13 +30,17 @@
             this.health = health;
         }
 
+        #endregion Constructors
+
+        #region Common
+
         public override string ToString()
         {
             //  string s = name + "," + health;
             //   return s;
 
             //string initialization
-            return $"n:{name},h:{health}";  
+            return $"n:{name},h:{health}";
         }
 
         public bool Equals(Player other)
@@ -52,5 +61,7 @@
         {
             return HashCode.Combine(name, health);
         }
+
+        #endregion Common
     }
 }
