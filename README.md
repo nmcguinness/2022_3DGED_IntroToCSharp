@@ -41,11 +41,12 @@ This repository contains code samples used to learn the basics of C# in preparat
 - [ ] Keywords: var, ref, out
 - [x] Enums in PlayerType
 - [x] Indexers in PlayerList
-- [ ] Inheritance in PlayerListInheritance
-- [ ] Generics
+- [x] Inheritance in PlayerListInheritance
+- [x] Inheritance - simpler example
 - [ ] Polymorphism
-- [ ] Structs
 - [ ] Interfaces
+- [ ] Structs
+- [ ] Generics
 - [ ] Tuple
 - [ ] Collections 2 - Array, Dictionary, Set
 - [ ] Exception Handling

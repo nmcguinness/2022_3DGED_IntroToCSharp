@@ -95,7 +95,15 @@ namespace GD
         {
             var playerListInheritance = new PlayerListInheritance();
 
+            playerListInheritance.Add(new Player("Zachariah Obediah", 100), true);
             playerListInheritance.Add(new Player("jack", 100), true);
+            playerListInheritance.Add(new Player("jack", 100), true);
+            playerListInheritance.Add(new Player("jill", 101, PlayerType.Assassin), false);
+            playerListInheritance.Add(new Player("jill", 101, PlayerType.Assassin), false);
+
+            //WriteLine will automatically call the ToString
+            //Console.WriteLine(playerListInheritance.ToString());
+            Console.WriteLine(playerListInheritance);
         }
 
         private void DemoPlayerList()
@@ -483,6 +491,36 @@ namespace GD
         //Func - Func<a,b,...,d, returntype> - function with 1+ params and return type
         //Action - Action<a,b,..,d> - function with 1+ params and NO return type
         //Predicate - bool Predicate<a> - func with 1 params and boolen return type
+
+        public void MultiplyByTwo(List<int> numbers)
+        {
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                numbers[i] = numbers[i] * 2;
+            }
+        }
+
+        public void Modify(List<int> numbers,
+            Func<int, int> transform)
+        {
+            //pre-condition?
+
+            for (int i = 0; i < numbers.Count; i++)
+                numbers[i] = transform(numbers[i]);
+
+            //post-condition?
+        }
+
+        public void DemoListFunc()
+        {
+            List<int> numbers = new List<int>
+            {
+                1,6,2,8,9,4
+            };
+
+            Modify(numbers, (number) => number * 2);
+            Modify(numbers, (number) => number * 4 - 10);
+        }
 
         /// <summary>
         /// Example of a Func

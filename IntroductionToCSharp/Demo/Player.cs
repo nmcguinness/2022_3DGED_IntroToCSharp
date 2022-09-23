@@ -53,7 +53,7 @@ namespace GD.Demo
             //   return s;
 
             //string initialization
-            return $"n:{name},h:{health},t:{playerType}";
+            return $"{name}\t{health}\t{playerType}";
         }
 
         public bool Equals(Player other)

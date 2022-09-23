@@ -1,4 +1,6 @@
-﻿namespace GD.Demo
+﻿using System.Text;
+
+namespace GD.Demo
 {
     /// <summary>
     /// Demo - how we can use inheritance rather than composition to
@@ -28,20 +30,32 @@
             return true;
         }
 
+        //public override string ToString()
+        //{
+        //    int index = 0;
+        //    string outStr = "Name\tHealth\tType\n";
+        //    foreach (Player p in this)
+        //    {
+        //        // outStr += $"[{index}]: {p}\n";
+        //        outStr += $"{p}\n"; //concat operator += or + is expensive
+
+        //        index++;
+        //    }
+
+        //    return outStr;
+
+        //    //this code would call List::ToString
+        //    //return base.ToString();
+        //}
+
         public override string ToString()
         {
-            int index = 0;
-            string outStr = "Name\tHealth\tType";
+            StringBuilder strBuilder = new StringBuilder();
+            strBuilder.Append("Name\tHealth\tType\n");
             foreach (Player p in this)
-            {
-                outStr += $"[{index}]: {p}";
-                index++;
-            }
+                strBuilder.Append($"{p}\n");
 
-            return outStr;
-
-            //this code would call List::ToString
-            //return base.ToString();
+            return strBuilder.ToString();
         }
     }
 }
