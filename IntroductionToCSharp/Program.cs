@@ -91,6 +91,8 @@ namespace GD
             app.DemoPlayerListInheritance();
         }
 
+        #region Demo - Inheritance from existing C# class
+
         private void DemoPlayerListInheritance()
         {
             var playerListInheritance = new PlayerListInheritance();
@@ -105,6 +107,10 @@ namespace GD
             //Console.WriteLine(playerListInheritance.ToString());
             Console.WriteLine(playerListInheritance);
         }
+
+        #endregion Demo - Inheritance from existing C# class
+
+        #region Demo - Composition
 
         private void DemoPlayerList()
         {
@@ -140,6 +146,8 @@ namespace GD
             List<Player> results2 = playerList.FindAll(pred);
             results2.ForEach((p) => Console.WriteLine(p));
         }
+
+        #endregion Demo - Composition
 
         #region Demo - Namespaces
 

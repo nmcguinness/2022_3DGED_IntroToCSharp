@@ -16,8 +16,9 @@ This repository contains code samples used to learn the basics of C# in preparat
 | Data Structures | Demo - using a List<T> | Program  | [C# List Tutorial](https://www.c-sharpcorner.com/article/c-sharp-list/) |
 | Lambda Expressions | Demo - using a Lambda Expression to find in a List<T> | Program  | [Lambda Expressions](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-expressions) |
 | enum | Demo - using an enum to represent a fixed set of player types, sorting by enum | Program, Player, PlayerType  | [C# Enumeration (or enum)](https://www.geeksforgeeks.org/c-sharp-enumeration-or-enum/) |
+| Predicate | Demo - how to use a Predicate in the List class, how to pass a Predicate as a parameter | Program  | [Predicate](https://www.tutorialsteacher.com/csharp/csharp-predicate) |
 | Func & Action | Demo - how to store a lambda expression in a Func/Action, how to pass a Func/Action as a parameter | Program  | [Func](https://www.tutorialsteacher.com/csharp/csharp-func-delegate), [Action](https://www.tutorialsteacher.com/csharp/csharp-action-delegate) |
-
+| Indexer | Demo - how to use an indexer to gain access to a List in a class | PlayerList  | [Indexers](https://www.tutorialspoint.com/csharp/csharp_indexers.htm) |
 
 ### To Do - Week 1
 - [x] Added Transform
@@ -37,12 +38,14 @@ This repository contains code samples used to learn the basics of C# in preparat
 - [x] Added FindAll, RemoveAll, Sort demos using Lambda expressions
 - [x] Added enum demo to show how to set enum symbol order (e.g Mage = 1) and how to sort by enum
 - [x] Predicate, Func, Action
-- [ ] Keywords: virtual, override
-- [ ] Keywords: var, ref, out
 - [x] Enums in PlayerType
 - [x] Indexers in PlayerList
 - [x] Inheritance in PlayerListInheritance
-- [x] Inheritance - simpler example
+
+### To Do - Week 3
+- [ ] Inheritance - simpler example
+- [ ] Keywords: virtual, override
+- [ ] Keywords: var, ref, out
 - [ ] Polymorphism
 - [ ] Interfaces
 - [ ] Structs
