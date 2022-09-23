@@ -84,8 +84,16 @@ namespace GD
             //Console.WriteLine("**** DemoAction ****");
             //app.DemoAction();
 
-            Console.WriteLine("**** DemoPlayerList ****");
-            app.DemoPlayerList();
+            //Console.WriteLine("**** DemoPlayerList ****");
+            //app.DemoPlayerList();
+
+            Console.WriteLine("**** DemoPlayerListInheritance ****");
+            app.DemoPlayerListInheritance();
+        }
+
+        private void DemoPlayerListInheritance()
+        {
+            throw new NotImplementedException();
         }
 
         private void DemoPlayerList()

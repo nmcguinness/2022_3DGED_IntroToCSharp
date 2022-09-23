@@ -1,10 +1,12 @@
 ﻿namespace GD.Demo
 {
     /// <summary>
+    /// Demo - how we can use composition to add functionality to existing List class in C#
     /// Demo - indexers, generics, interfaces, structs
     /// </summary>
     public class PlayerList //store of Player objects
     {
+        //PlayerList is composed of a list of player
         private List<Player> players;
 
         //get/set - No! Let's do something different i.e. indexer
