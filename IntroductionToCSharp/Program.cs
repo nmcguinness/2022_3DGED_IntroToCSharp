@@ -105,11 +105,22 @@ namespace GD
                 // Console.WriteLine(playerList.Get(i));
             }
 
+            Console.WriteLine();
+
+            //don't give direct access to the list (i.e. using List property below)
             //List<Player> results = playerList.List.FindAll((p) => p.health > 50);
 
-            List<Player> results = playerList.FindAll((p) => p.health > 50);
+            //instead we search using FindAll - since that doesnt expose the list
+            List<Player> results1 = playerList.FindAll((p) => p.health > 50);
 
-            //use our new FindAll to find all players containing Z and with type Hunter || Thief
+            //use our new FindAll to find all players containing z (case-insensitive and with type Hunter || Thief
+            Predicate<Player> pred = (player) =>
+                        player.name.ToLower().Contains("z")
+                        && (player.playerType == PlayerType.Hunter
+                        || player.playerType == PlayerType.Thief);
+
+            List<Player> results2 = playerList.FindAll(pred);
+            results2.ForEach((p) => Console.WriteLine(p));
         }
 
         #region Demo - Namespaces
