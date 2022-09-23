@@ -94,7 +94,9 @@ namespace GD
             var playerList = new PlayerList();
 
             playerList.Add(new Player("jack", 100));
-            playerList.Add(new Player("jill", 101));
+            playerList.Add(new Player("jill", 101, PlayerType.Assassin));
+            playerList.Add(new Player("Zack", 101, PlayerType.Thief)); //our only result
+            playerList.Add(new Player("Alan", 101, PlayerType.Mage));
 
             //let's print out the players - use the new toy = indexer
             for (int i = 0; i < playerList.Count; i++)
@@ -107,7 +109,7 @@ namespace GD
 
             List<Player> results = playerList.FindAll((p) => p.health > 50);
 
-            //use our new FindAll to find all players containing Z and with type Hunter || Sniper
+            //use our new FindAll to find all players containing Z and with type Hunter || Thief
         }
 
         #region Demo - Namespaces

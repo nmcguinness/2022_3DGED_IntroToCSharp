@@ -14,10 +14,11 @@
             get { return players[index]; }
         }
 
-        public List<Player> List
-        {
-            get { return players; }
-        }
+        //don't give access to the list directly - the calling code may change it!
+        //public List<Player> List
+        //{
+        //    get { return players; }
+        //}
 
         public int Count
         {
