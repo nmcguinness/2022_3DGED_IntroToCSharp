@@ -93,7 +93,9 @@ namespace GD
 
         private void DemoPlayerListInheritance()
         {
-            throw new NotImplementedException();
+            var playerListInheritance = new PlayerListInheritance();
+
+            playerListInheritance.Add(new Player("jack", 100), true);
         }
 
         private void DemoPlayerList()

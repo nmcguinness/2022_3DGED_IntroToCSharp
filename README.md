@@ -39,10 +39,10 @@ This repository contains code samples used to learn the basics of C# in preparat
 - [x] Predicate, Func, Action
 - [ ] Keywords: virtual, override
 - [ ] Keywords: var, ref, out
-- [x] Enums
-- [ ] Indexers
+- [x] Enums in PlayerType
+- [x] Indexers in PlayerList
+- [ ] Inheritance in PlayerListInheritance
 - [ ] Generics
-- [ ] Inheritance
 - [ ] Polymorphism
 - [ ] Structs
 - [ ] Interfaces

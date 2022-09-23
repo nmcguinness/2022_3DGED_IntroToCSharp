@@ -15,6 +15,18 @@
         /// <param name="p"></param>
         /// <param name="addDuplicate"></param>
         /// <returns></returns>
+        public bool Add(Player p, bool addDuplicate)
+        {
+            //jump out on one condition
+            if (Contains(p) && addDuplicate == false)
+                return false;
+
+            //in all other circumstances, add
+            Add(p);
+
+            //return true for success
+            return true;
+        }
 
         public override string ToString()
         {
