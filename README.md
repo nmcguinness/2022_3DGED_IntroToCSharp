@@ -37,12 +37,19 @@ This repository contains code samples used to learn the basics of C# in preparat
 - [x] Added FindAll, RemoveAll, Sort demos using Lambda expressions
 - [x] Added enum demo to show how to set enum symbol order (e.g Mage = 1) and how to sort by enum
 - [x] Predicate, Func, Action
-- [ ] Delegate
-- [ ] Inheritance, Polymorphism
 - [ ] Keywords: virtual, override
-- [ ] Interface
-- [ ] Generics
 - [ ] Keywords: var, ref, out
-- [ ] Struct
+- [x] Enums
+- [ ] Indexers
+- [ ] Generics
+- [ ] Inheritance
+- [ ] Polymorphism
+- [ ] Structs
+- [ ] Interfaces
 - [ ] Tuple
+- [ ] Collections 2 - Array, Dictionary, Set
+- [ ] Exception Handling
+- [ ] Tuple
+- [ ] Delegates
+- [ ] Events
 

@@ -81,8 +81,33 @@ namespace GD
             //Console.WriteLine("**** DemoFuncAsParameter ****");
             //app.DemoFuncAsParameter();
 
-            Console.WriteLine("**** DemoAction ****");
-            app.DemoAction();
+            //Console.WriteLine("**** DemoAction ****");
+            //app.DemoAction();
+
+            Console.WriteLine("**** DemoPlayerList ****");
+            app.DemoPlayerList();
+        }
+
+        private void DemoPlayerList()
+        {
+            // PlayerList playerList = new PlayerList();
+            var playerList = new PlayerList();
+
+            playerList.Add(new Player("jack", 100));
+            playerList.Add(new Player("jill", 101));
+
+            //let's print out the players - use the new toy = indexer
+            for (int i = 0; i < playerList.Count; i++)
+            {
+                Console.WriteLine(playerList[i]); //indexer
+                // Console.WriteLine(playerList.Get(i));
+            }
+
+            //List<Player> results = playerList.List.FindAll((p) => p.health > 50);
+
+            List<Player> results = playerList.FindAll((p) => p.health > 50);
+
+            //use our new FindAll to find all players containing Z and with type Hunter || Sniper
         }
 
         #region Demo - Namespaces
@@ -432,6 +457,16 @@ namespace GD
 
         #region Func Action Predicate
 
+        //Func - Func<a,b,...,d, returntype> - function with 1+ params and return type
+        //Action - Action<a,b,..,d> - function with 1+ params and NO return type
+        //Predicate - bool Predicate<a> - func with 1 params and boolen return type
+
+        /// <summary>
+        /// Example of a Func
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
         public int add(int x, int y)
         {
             return x + y;
@@ -474,6 +509,11 @@ namespace GD
             results.ForEach((number) => Console.WriteLine(number));
         }
 
+        /// <summary>
+        /// Example of an Action
+        /// </summary>
+        /// <param name="freq"></param>
+        /// <param name="durationMs"></param>
         private void PlaySound(int freq, int durationMs)
         {
             Console.Beep(freq, durationMs);
